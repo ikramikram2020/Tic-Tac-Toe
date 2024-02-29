@@ -27,7 +27,8 @@ class Tic:
             elif all([symbol != " " for row in self.board for symbol in row]):
                 messagebox.showinfo("Tie")
                 self.clear_board()
-            
+            else:
+                self.player = "O" if self.player == "X" else "X"
         else:
             messagebox.showerror("Invalid Move")
 
@@ -56,3 +57,4 @@ class Tic:
 window = tk.Tk()
 app = Tic(window)
 window.mainloop()
+
